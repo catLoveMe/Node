@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>客户管理</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- bootstrap -->
+    <link href="css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-overrides.css" type="text/css" rel="stylesheet" />
+
+    <!-- global styles -->
+    <link rel="stylesheet" type="text/css" href="css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="css/elements.css" />
+    <link rel="stylesheet" type="text/css" href="css/icons.css" />
+
+    <!-- libraries -->
+    <link href="css/lib/font-awesome.css" type="text/css" rel="stylesheet" />
+
+    <!-- this page specific styles -->
+    <link rel="stylesheet" href="css/compiled/tables.css" type="text/css" media="screen" />
+
+    <!-- open sans font -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css' />
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<style>
+    #username,#userNum,#user_tel{
+      border-radius: 0px;
+        height: 17px;
+    }
+    #search{
+        height: 27px;
+        width: 60px;
+        position: absolute;
+        top: 85px;
+        left: 1030px;
+        background-color: rgb(0, 126, 204);
+        color: white;
+        border:rgb(0,126,204);
+    }
+
+
+</style>
+<body>
+
+<!-- navbar -->
+<!-- 上面导航 -->
+<div class="navbar navbar-inverse">
+    <div class="navbar-inner">
+        <button type="button" class="btn btn-navbar visible-phone" id="menu-toggler">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <a class="brand" href="index.html"><img src="img/logo.png" /></a>
+
+        <ul class="nav pull-right">
+            <li class="settings hidden-phone">
+                <a href="" role="button">
+                    <i class="icon-cog"></i>
+                </a>
+            </li>
+            <li class="settings hidden-phone">
+                <a href="login.html" role="button">
+                    <i class="icon-share-alt"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- end navbar -->
+
+<!-- sidebar -->
+<div id="sidebar-nav">
+    <ul id="dashboard-menu">
+        <li>
+            <a href="person.html">
+                <i class="icon-home"></i>
+                <span>人员管理</span>
+            </a>
+        </li>
+        <li  >
+            <a href="role.html">
+                <i class="icon-signal"></i>
+                <span>角色管理</span>
+            </a>
+        </li>
+        <li>
+            <a href="product2.html">
+                <i class="icon-edit"></i>
+                <span>商品管理</span>
+            </a>
+        </li>
+        <li  class="active">
+            <div class="pointer">
+                <div class="arrow"></div>
+                <div class="arrow_border"></div>
+            </div>
+            <a href="user.html">
+                <i class="icon-group"></i>
+                <span>客户管理</span>
+            </a>
+        </li>
+        <li>
+            <a href="orderForm.html">
+                <i class="icon-reorder"></i>
+                <span>订单管理</span>
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-toggle" href="newTea.html">
+                <i class="icon-share-alt"></i>
+                <span>新茶预约</span>
+                <i class="icon-chevron-down"></i>
+            </a>
+            <ul class="submenu">
+                <li><a href="newTeaOrder.html">预约订单管理</a></li>
+                <li><a href="newTeaProduct.html">产品管理</a></li>
+            </ul>
+        </li>
+        <li>
+            <a class="dropdown-toggle" href="activity.html">
+                <i class="icon-calendar-empty"></i>
+                <span>游园管理</span>
+                <i class="icon-chevron-down"></i>
+            </a>
+            <ul class="submenu">
+                <li><a href="activityIntro.html">活动介绍</a></li>
+                <li><a href="activityApply.html">活动申请</a></li>
+            </ul>
+        </li>
+        <li>
+
+            <a href="tea.html">
+                <i class="icon-th-large"></i>
+                <span>茶树管理</span>
+            </a>
+        </li>
+        <li>
+            <a href="pack.html">
+                <i class="icon-picture"></i>
+                <span>包装管理</span>
+            </a>
+        </li>
+        <li>
+            <a href="museum.html">
+                <i class="icon-leaf"></i>
+                <span>博物馆管理</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<!-- end sidebar -->
+
+
+<!-- main container -->
+<div class="content">
+    <div class="container-fluid">
+        <div id="pad-wrapper">
+
+            <!-- products table-->
+            <!-- the script for the toggle all checkboxes from header is located in js/theme.js -->
+            <div class="table-wrapper products-table section">
+                <div class="row-fluid head">
+                    <div class="span12">
+                        <h4>客户管理</h4>
+                    </div>
+                </div>
+
+                <!--<div class="row-fluid filter-block">-->
+                    <!--<div class="pull-right">-->
+                        <!--会员名：-->
+                        <!--<input type="text" class="search" id="search" />-->
+                        <!--<button class="btn btn-lg btn-flat success" onclick='searchOrder()' >搜索</button>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <div class="row-fluid filter-block" style="margin-left: 300px">
+                    <!--<select name="" id="username">-->
+                        <!--<option value="0">会员名</option>-->
+                    <!--</select>-->
+                    <input type="text" id="username" placeholder="会员名"/>
+                    <!--<select name="" id="userNum">-->
+                        <!--<option value="0">会员编号</option>-->
+                    <!--</select>-->
+                    <input type="text" id="userNum" placeholder="会员编号"/>
+                    <!--<select name="" id="user_tel">-->
+                        <!--<option value="0">电话号码</option>-->
+                    <!--</select>-->
+                    <input type="text" id="user_tel" placeholder="电话号码"/>
+                    <button class="btn btn-lg btn-flat success" id="search" onclick="searchOrder()">查询</button>
+                </div>
+
+                <div class="row-fluid">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <!--<th class="span3">-->
+                                <!--<input type="checkbox" />-->
+                                <!--会员名-->
+                            <!--</th>-->
+                            <th class="span3">
+                                <span class="line"></span>会员编号
+                            </th><th class="span3">
+                                <span class="line"></span>会员名
+                            </th><th class="span3">
+                                <span class="line"></span>性别
+                            </th>
+                            <th class="span3">
+                                <span class="line"></span>生日
+                            </th><th class="span3">
+                                <span class="line"></span>电话
+                            </th><th class="span3">
+                                <span class="line"></span>订单量
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody id="tbody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- end products table -->
+            <div class="pagination">
+                <ul>
+                    <li ><a onclick="prevPage()">&#8249;</a>
+
+                    </li>
+                    <li  id="li">
+
+                    </li>
+                    <!--<li><a class="active" href="#">1</a></li>-->
+                    <!--<li><a href="#">2</a></li>-->
+                    <!--<li><a href="#">3</a></li>-->
+                    <!--<li><a href="#">4</a></li>-->
+                    <li><a onclick="nextPage()">&#8250;</a></li>
+                </ul>
+            </div>
+            <div class=" pad-wrapper page"><span id="counP" style="color: grey"></span></div>
+            <!-- end users table -->
+        </div>
+    </div>
+</div>
+<!-- end main container -->
+
+<!-- Modal -->
+<!-- 修改 -->
+
+<!-- scripts -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/customManger.js"></script>
+</body>
+</html>
