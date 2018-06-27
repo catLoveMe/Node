@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改成员数据</title>
+</head>
+<body>
+<form >
+    管理员编号:<input type="text" name="adminid" id="adminid" value=<%=message[0].admin_id%>>
+    角色编号:<input type="text" name="roleid"  id="roleid" value=<%=message[0].role_id%>>
+    管理员账号:<input type="text" name="adminlogin" id="adminlogin" value=<%=message[0].admin_login%>>
+    管理员密码：<input type="text" name="adminpsw" id="adminpsw" value=<%=message[0].admin_psw%>><br/>
+    管理员状态：<input type="text" name="admincondition" id="admincondition" value=<%=message[0].admin_condition%>><br/>
+
+    <button  type="button" id="baocun">保存</button>
+</form>
+<script type="text/javascript" src="/js/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="/js/editstaff.js">
+</script>
+</body>
+</html>

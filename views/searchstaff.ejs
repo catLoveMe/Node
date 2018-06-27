@@ -1,0 +1,90 @@
+<!--Created by ZXW on 2017/11/11.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查找管理员</title>
+    <style type="text/css" rel="stylesheet">
+        html{
+            font-size: 16px;
+        }
+        .biaoti{
+            font-size: 1.5rem;
+        }
+        table{
+            width: 80%;
+        }
+        table tr td{
+            text-align: center;
+        }
+        table tr td button{
+            margin-left: 5px;
+        }
+        .pagination{
+            display: inline-block;
+            text-align: center;
+            margin-left: 40%;
+        }
+        .pagination li{
+            list-style-type: none;
+            float: left;
+            outline: 1px solid black;
+            width: 20px;
+        }
+        .pagination li a{
+            text-decoration: none;
+        }
+        #page{
+            width: 10%;
+            margin-left: 40%;
+            text-align: center;
+        }
+        #nomestips{
+            width: 80%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1 class="biaoti">人员管理-查找</h1>
+<button class="add">增加</button>
+<button class="deletes">删除</button><br/>
+角色权限:<input type="text" id="rolequanxian">
+<button id="search">查找</button>
+<table  border="1" cellspacing="0">
+    <thead>
+    <tr>
+        <th><input type="checkbox" class="choose"></th>
+        <th>管理员编号</th>
+        <th>角色名称</th>
+        <th>角色权限</th>
+        <th>管理员账号</th>
+        <th>管理员密码</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <%for (var i = 0; i < message.length; i++) {%>
+     <tr>
+        <td><input type='checkbox' class='choose'></td>
+        <td> <%=message[i].admin_id%> </td>
+        <td> <%=message[i].role_name%> </td>
+        <td> <%=message[i].role_porwer%> </td>
+        <td> <%=message[i].admin_login%> </td>
+        <td> <%=message[i].admin_psw%> </td>
+        <td>
+            <button class='edit'>修改</button>
+            <button class='delete'>删除</button>
+        </td>
+     </tr>
+   <%}%>
+    </tbody>
+</table>
+<div id="nomestips"></div>
+<script type="text/javascript" src="/js/jquery-1.11.3.js"></script>
+<script src="/js/myAjax.js"></script>
+<!--<script type="text/javascript" src="/js/staff.js"></script>-->
+<script type="text/javascript"  src="/js/searchstaff.js">
+</script>
+</body>
+</html>
