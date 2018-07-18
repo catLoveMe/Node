@@ -17,7 +17,7 @@ const staffController ={
             search=2
         }
 
-        let currentPage = req.query.currentPage;
+        let currentPage = req.query.currentPage;//当前页
         let sql = "SELECT admin_id,role_name,role_porwer,admin_login,admin_psw,admin_condition " +
         " FROM role,admin WHERE role.role_id=admin.role_id ";
         if(search!=""){

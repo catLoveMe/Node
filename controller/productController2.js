@@ -1,6 +1,4 @@
-/**
- * Created by zz on 2017/11/12.
- */
+
  "use strict";
 const productDao = require("../dao/productDao2.js");
 const fs = require("fs");
@@ -239,10 +237,11 @@ const teaproduct ={
             resp.send(data);
         });
     },
+    //文件上传
     fsProImg(req,resp){
         let tempPath = req.files.imgFile.path;
         let targetPath = "./public/uploads/"+req.files.imgFile.name;
-        fs.createReadStream(tempPath).pipe(fs.createWriteStream(targetPath));
+        fs.createReadStream(tempPath).pipe(fs.createWriteStream(targetPath));//文件流 管道
         var imgPath = "uploads/"+req.files.imgFile.name;
         resp.send(imgPath);
     },
@@ -271,6 +270,6 @@ const teaproduct ={
             resp.send(data);
         });
     }
-    //for zz end
+
 };
 module.exports = teaproduct;

@@ -1,5 +1,6 @@
-﻿const express = require("express");
-const bodyParser = require("body-parser");
+﻿//引入模块
+const express = require("express");
+const bodyParser = require("body-parser");//post
 const session = require("express-session");
 const cookie = require("cookie-parser");
 const path1 = require("path");
@@ -22,16 +23,17 @@ const upload = require("./routes/uploadRoutes");
 
 const app = express();
 app.use(morgan("dev"));
+//先使用cookie在使用session,cookie基于session
 app.use(cookie());
 app.use(session({
     name:"cms",
-    secret:"123",
-    cookie:{maxAge:300000},
+    secret:"123",//使用的密钥
+    cookie:{maxAge:300000},//cookie的过期时间
     resave:true,
     rolling:true,
     saveUninitialized:true
 }));
-
+//验证码
 app.use("/zzcode.do",(request,response,next)=>{
     request.session.code = request.query.code;
     next();
@@ -42,7 +44,7 @@ app.use("/zzinfo.do",(request,response,next)=>{
     request.session.userId = request.query.password;
     next();
 });
-
+//开启拦截，用户登录之后为之前的页面路由
 // app.use("/",(request,response,next)=>{
 //     request.headers.referer = request.headers.referer||"";
 //     if(request.session.myname||request.path=="/login.html"||request.headers.referer.match(/login.html$/)
@@ -64,7 +66,7 @@ app.set("views",path1.join(__dirname,"views"));
 app.set("view engine","ejs");
 app.use(express.static(__dirname+"/public"));
 app.use(express.static(path1.join(__dirname,"public/pages")));
-
+//各种路由引用
 app.use(testRoute);
 app.use(checkUserRoute);
 app.use(bespeakYUrote);

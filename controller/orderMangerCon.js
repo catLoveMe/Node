@@ -1,6 +1,4 @@
-/**
- * Created by GY on 2017/11/13 0013.
- */
+
     "use strict";
 const orderMangerDao = require("../dao/orderMangerDao.js");
 
